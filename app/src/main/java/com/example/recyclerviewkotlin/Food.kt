@@ -2,11 +2,14 @@ package com.example.recyclerviewkotlin
 
 import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 //data class Food(val image : Int, val name : String)
 
-
-data class Food(val image : Int, val name : String) : Parcelable {
+@Parcelize
+data class Food(val image : Int, val name : String) : Parcelable
+/*
+{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!
@@ -34,3 +37,5 @@ data class Food(val image : Int, val name : String) : Parcelable {
 }
 
 
+
+ */
