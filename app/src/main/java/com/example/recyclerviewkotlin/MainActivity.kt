@@ -1,5 +1,6 @@
 package com.example.recyclerviewkotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,5 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         foodAdapter = FoodAdapter(foodList)
         recyclerView.adapter = foodAdapter
+
+        foodAdapter.onItemClick = {
+            val intent = Intent(this, DetailedActivity::class.java)
+
+            intent.putExtra("food", it)
+            startActivity(intent)
+        }
     }
 }
